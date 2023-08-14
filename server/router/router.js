@@ -1,8 +1,8 @@
 import express from "express"
-import { getMessager } from "../controller/controller.js";
+import { addUser } from "../controller/controller.js";
 
 const router=express.Router();
 
-router.post("/getMessager",getMessager)
+router.post("/addUser",addUser)
 
 export default router
