@@ -25,3 +25,21 @@ export const addPost=async(req,res)=>{
         return res.status(200).json({msg:"Error occured  while adding post"})
     }
 }
+
+export const getAllPost=async (req,res)=>{
+    try{
+        const result=await Post.find({});
+        return res.status(200).json(result);
+    }catch(e){
+        return res.status(500).json({msg:"Error giving the All the post"});
+    }
+}
+
+export const getUserPost=async(req,res)=>{
+    try{
+        const result=await Post.find({sub:req.params.id});
+        return res.status(200).json(result)
+    }catch(e){
+        return res.status(500).json({msg:"Error while getting User Posts"})
+    }
+}
